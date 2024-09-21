@@ -30,62 +30,27 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a className="hover:text-primary">Item 1</a>
+              <a className="hover:text-primary">Features</a>
             </li>
-            <li tabIndex={0}>
-              <a className="justify-between">
-                Parent
-                {/* <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M19 9l-7 7-7-7" />
-                </svg>*/}
-              </a>
-              <ul className="p-2 bg-base-200 rounded-lg">
-                <li>
-                  <a className="hover:text-primary">Submenu 1</a>
-                </li>
-                <li>
-                  <a className="hover:text-primary">Submenu 2</a>
-                </li>
-              </ul>
-            </li>
+
             <li>
-              <a className="hover:text-primary">Item 3</a>
+              <a className="hover:text-primary">Pricing</a>
             </li>
           </ul>
         </div>
         {/* Brand Logo */}
-        <a className="btn btn-ghost normal-case text-xl text-primary">
-          YourSaaS
-        </a>
+        <a className="btn btn-ghost normal-case text-xl text-primary">NextAI</a>
       </div>
 
       {/* Navbar Center - for larger screens */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a className="hover:text-primary">Item 1</a>
+            <a className="hover:text-primary">Features</a>
           </li>
-          <li tabIndex={0}>
-            <details>
-              <summary className="hover:text-primary">Parent</summary>
-              <ul className="p-2 bg-base-200 rounded-lg">
-                <li>
-                  <a className="hover:text-primary">Submenu 1</a>
-                </li>
-                <li>
-                  <a className="hover:text-primary">Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
+
           <li>
-            <a className="hover:text-primary">Item 3</a>
+            <a className="hover:text-primary">Pricing</a>
           </li>
         </ul>
       </div>
