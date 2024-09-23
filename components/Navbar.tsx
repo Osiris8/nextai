@@ -39,7 +39,7 @@ export default function Navbar() {
           </ul>
         </div>
         {/* Brand Logo */}
-        <a className="btn btn-ghost normal-case text-xl text-primary">NextAI</a>
+        <a className="btn btn-ghost normal-case text-xl">NextAI</a>
       </div>
 
       {/* Navbar Center - for larger screens */}
