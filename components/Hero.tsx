@@ -19,7 +19,6 @@ export default function Hero() {
             </p>
             <div className="flex space-x-4">
               <button className="btn btn-primary">Log In</button>
-              <button className="btn btn-secondary">Sign Up</button>
             </div>
           </div>
 
