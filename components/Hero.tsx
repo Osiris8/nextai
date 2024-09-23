@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-100 min-h-screen">
       <div className="hero-content text-center">
         <div className="max-w-md">
           {/* Titre principal attirant */}
