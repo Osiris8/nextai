@@ -1,3 +1,4 @@
+import { Cta } from "@/components/cta";
 import { FeatureSectionComponent } from "@/components/feature-section";
 import { HeroSectionComponent } from "@/components/hero-section";
 import { NavbarComponent } from "@/components/Navbar";
@@ -10,6 +11,7 @@ export default function Home() {
       <HeroSectionComponent />
       <TrustedByComponent />
       <FeatureSectionComponent />
+      <Cta />
     </div>
   );
 }
