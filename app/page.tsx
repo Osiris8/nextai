@@ -1,19 +1,19 @@
-import { Cta } from "@/components/cta";
-import { FeatureSectionComponent } from "@/components/feature-section";
-import { HeroSectionComponent } from "@/components/hero-section";
-import { NavbarComponent } from "@/components/Navbar";
-import { TestimonialComponent } from "@/components/testimonial";
-import { TrustedByComponent } from "@/components/trusted-by";
+import { Feature } from "@/components/Feature";
+import { Footer } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
+import { Navbar } from "@/components/Navbar";
+
+import { Trusted } from "@/components/Trusted";
 
 export default function Home() {
   return (
     <div>
-      <NavbarComponent />
-      <HeroSectionComponent />
-      <TrustedByComponent />
-      <FeatureSectionComponent />
-      <TestimonialComponent />
-      <Cta />
+      <Navbar />
+      <Hero />
+      <Trusted />
+      <Feature />
+
+      <Footer />
     </div>
   );
 }

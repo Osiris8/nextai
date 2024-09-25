@@ -11,7 +11,7 @@ const companies = [
   { name: "Hooli", logo: "/placeholder.svg?height=40&width=120" },
 ];
 
-export function TrustedByComponent() {
+export function Trusted() {
   return (
     <section className="bg-gray-50 dark:bg-gray-800 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

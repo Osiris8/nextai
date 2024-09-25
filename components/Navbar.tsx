@@ -1,28 +1,35 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Features", href: "/features" },
   { name: "Pricing", href: "/pricing" },
   { name: "About", href: "/about" },
-]
+];
 
-export function NavbarComponent() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
+export function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="bg-white dark:bg-gray-900">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <svg className="h-8 w-auto text-purple-600" viewBox="0 24" fill="currentColor">
+            <svg
+              className="h-8 w-auto text-purple-600"
+              viewBox="0 24"
+              fill="currentColor"
+            >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 10-5M2 12l10 10-5"></path>
             </svg>
           </Link>
@@ -62,14 +69,22 @@ export function NavbarComponent() {
         </div>
       </nav>
       {/* Mobile menu, show/hide based on menu open state. */}
-      <div className={`lg:hidden ${mobileMenuOpen ? "" : "hidden"}`} role="dialog" aria-modal="true">
+      <div
+        className={`lg:hidden ${mobileMenuOpen ? "" : "hidden"}`}
+        role="dialog"
+        aria-modal="true"
+      >
         {/* Background backdrop, show/hide based on slide-over state. */}
         <div className="fixed inset-0 z-50"></div>
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <svg className="h-8 w-auto text-purple-600" viewBox="0 24" fill="currentColor">
+              <svg
+                className="h-8 w-auto text-purple-600"
+                viewBox="0 24"
+                fill="currentColor"
+              >
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 10-5M2 12l10 10-5"></path>
               </svg>
             </Link>
@@ -114,5 +129,5 @@ export function NavbarComponent() {
         </div>
       </div>
     </header>
-  )
+  );
 }

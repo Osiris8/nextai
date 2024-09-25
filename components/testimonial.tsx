@@ -5,33 +5,33 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "'Sarah Thompson'",
-    role: "'Marketing Director'",
-    company: "'TechCorp'",
+    name: "Sarah Thompson",
+    role: "Marketing Director",
+    company: "TechCorp",
     image: "/placeholder.svg?height=96&width=96",
     quote:
-      "'This SaaS platform has revolutionized our marketing efforts. The AI-powered insights have helped us make data-driven decisions that significantly improved campaign performance.'",
+      "This SaaS platform has revolutionized our marketing efforts. The AI-powered insights have helped us make data-driven decisions that significantly improved campaign performance.",
     rating: 5,
   },
   {
-    name: "'Michael Chen'",
-    role: "'Product Manager'",
-    company: "'InnovateTech'",
+    name: "Michael Chen",
+    role: "Product Manager",
+    company: "InnovateTech",
     image: "/placeholder.svg?height=96&width=96",
-    quote: "'The collaboration features are top-notch.",
+    quote: "The collaboration features are top-notch.",
     rating: 5,
   },
   {
-    name: "'Emily Rodriguez'",
-    role: "'Data Analyst'",
-    company: "'DataDrive'",
+    name: "Emily Rodriguez",
+    role: "Data Analyst",
+    company: "DataDrive",
     image: "/placeholder.svg?height=96&width=96",
-    quote: "'As a data analyst",
+    quote: "As a data analyst",
     rating: 4,
   },
 ];
 
-export function TestimonialComponent() {
+export default function Testimonial() {
   return (
     <section className="bg-gray-50 dark:bg-gray-800 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
