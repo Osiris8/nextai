@@ -1,7 +1,10 @@
+import Cta from "@/components/cta";
 import { Feature } from "@/components/Feature";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
+import Pricing from "@/components/Pricing";
+import Testimonial from "@/components/testimonial";
 
 import { Trusted } from "@/components/Trusted";
 
@@ -12,7 +15,9 @@ export default function Home() {
       <Hero />
       <Trusted />
       <Feature />
-
+      <Pricing />
+      <Testimonial />
+      <Cta />
       <Footer />
     </div>
   );
