@@ -3,12 +3,12 @@
 import Image from "next/image";
 
 const companies = [
-  { name: "'Acme Corp'", logo: "'/placeholder.svg?height=40&width=120'" },
-  { name: "'Globex'", logo: "'/placeholder.svg?height=40&width=120'" },
-  { name: "'Soylent Corp'", logo: "'/placeholder.svg?height=40&width=120'" },
-  { name: "'Initech'", logo: "'/placeholder.svg?height=40&width=120'" },
-  { name: "'Umbrella Corp'", logo: "'/placeholder.svg?height=40&width=120'" },
-  { name: "'Hooli'", logo: "'/placeholder.svg?height=40&width=120'" },
+  { name: "Acme Corp", logo: "/placeholder.svg?height=40&width=120" },
+  { name: "Globex", logo: "/placeholder.svg?height=40&width=120" },
+  { name: "Soylent Corp", logo: "/placeholder.svg?height=40&width=120" },
+  { name: "Initech", logo: "/placeholder.svg?height=40&width=120" },
+  { name: "Umbrella Corp", logo: "/placeholder.svg?height=40&width=120" },
+  { name: "Hooli", logo: "/placeholder.svg?height=40&width=120" },
 ];
 
 export function TrustedByComponent() {
