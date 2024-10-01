@@ -5,7 +5,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   PlusIcon,
   SendIcon,
-  MessageSquare,
   Settings,
   LogOut,
   User,
@@ -14,7 +13,7 @@ import {
   PenTool,
 } from "lucide-react";
 
-export default function Component() {
+export default function Dashboard() {
   const [messages, setMessages] = useState([
     { role: "assistant", content: "Hello! How can I assist you today?" },
   ]);
