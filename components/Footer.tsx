@@ -15,7 +15,6 @@ const navigation = {
     { name: "Blog", href: "#" },
     { name: "Jobs", href: "#" },
     { name: "Presse", href: "#" },
-    { name: "Partenères", href: "#" },
   ],
   legal: [
     { name: "Confidentialité", href: "#" },
