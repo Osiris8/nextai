@@ -1,14 +1,19 @@
 "use client";
 
 import Image from "next/image";
-
+import Github from "@/public/images/github.svg";
+import Discord from "@/public/images/discord.svg";
+import Lexington from "@/public/images/lexington.svg";
+import Afterpay from "@/public/images/afterpay.svg";
+import Attentive from "@/public/images/attentive.svg";
+import Maze from "@/public/images/maze.svg";
 const companies = [
-  { name: "Acme Corp", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Globex", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Soylent Corp", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Initech", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Umbrella Corp", logo: "/placeholder.svg?height=40&width=120" },
-  { name: "Hooli", logo: "/placeholder.svg?height=40&width=120" },
+  { name: "Github", logo: Github },
+  { name: "Discord", logo: Discord },
+  { name: "Lexington", logo: Lexington },
+  { name: "Afterpay", logo: Afterpay },
+  { name: "Attentive", logo: Attentive },
+  { name: "Maze", logo: Maze },
 ];
 
 export function Trusted() {
