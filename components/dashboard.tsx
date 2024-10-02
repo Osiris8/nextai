@@ -130,7 +130,7 @@ export default function Dashboard() {
               }`}
             >
               <div
-                className={`max-w-sm p-3 rounded-lg ${
+                className={`max-w-lg p-3 rounded-lg ${
                   message.role === "user"
                     ? "bg-gray-900 text-white"
                     : "bg-gray-200"
