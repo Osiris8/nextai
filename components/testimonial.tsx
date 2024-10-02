@@ -1,32 +1,37 @@
 "use client";
 
 import Image from "next/image";
+import sarahThompson from "@/public/images/sarah_thompson.png";
+import michaelChen from "@/public/images/michael_chen.png";
+import emilyRodriguez from "@/public/images/emily_rodriguez.png";
 import { Star } from "lucide-react";
 
 const testimonials = [
   {
     name: "Sarah Thompson",
-    role: "Marketing Director",
+    role: "Directeur Marketing",
     company: "TechCorp",
-    image: "/placeholder.svg?height=96&width=96",
+    image: sarahThompson,
     quote:
-      "This SaaS platform has revolutionized our marketing efforts. The AI-powered insights have helped us make data-driven decisions that significantly improved campaign performance.",
+      "Cette plateforme SaaS a révolutionné nos efforts marketing. Les informations fournies par l'IA nous ont aidés à prendre des décisions basées sur des données qui ont considérablement amélioré les performances de nos campagnes.",
     rating: 5,
   },
   {
     name: "Michael Chen",
     role: "Product Manager",
     company: "InnovateTech",
-    image: "/placeholder.svg?height=96&width=96",
-    quote: "The collaboration features are top-notch.",
+    image: michaelChen,
+    quote:
+      "Les fonctionnalités de collaboration sont de premier ordre. La productivité de notre équipe a explosé depuis que nous avons commencé à utiliser cette plateforme. Elle est devenue un élément indispensable de notre flux de travail.",
     rating: 5,
   },
   {
     name: "Emily Rodriguez",
     role: "Data Analyst",
-    company: "DataDrive",
-    image: "/placeholder.svg?height=96&width=96",
-    quote: "As a data analyst",
+    company: "DatuDrive",
+    image: emilyRodriguez,
+    quote:
+      "En tant qu'analyste de données, je suis impressionné par les capacités d'analyse avancées. Les informations que je peux tirer de nos données à l'aide de cette plateforme sont inestimables pour notre stratégie commerciale.",
     rating: 4,
   },
 ];
@@ -37,10 +42,10 @@ export default function Testimonial() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600 dark:text-indigo-400">
-            Testimonials
+            Témoignages
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Hear from Our Satisfied Customers
+            Nos clients satisfaits
           </p>
         </div>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
@@ -64,7 +69,7 @@ export default function Testimonial() {
                         {testimonial.name}
                       </div>
                       <div className="mt-1 text-sm leading-5 text-gray-600 dark:text-gray-300">
-                        {testimonial.role} at {testimonial.company}
+                        {testimonial.role} chez {testimonial.company}
                       </div>
                     </div>
                   </div>
