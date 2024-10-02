@@ -1,3 +1,5 @@
+"use client";
+import React, { useState } from "react";
 import { Check } from "lucide-react";
 
 const tiers = [
@@ -5,9 +7,10 @@ const tiers = [
     name: "Starter",
     id: "tier-starter",
     href: "#",
-    priceMonthly: "$29",
+    priceMonthly: 29,
+    priceAnnually: 290,
     description:
-      "Perfect for individuals and small teams just getting started.",
+      "Idéal pour les particuliers et les petites équipes qui débutent.",
     features: [
       "5 Projects",
       "10GB Storage",
@@ -20,8 +23,10 @@ const tiers = [
     name: "Pro",
     id: "tier-pro",
     href: "#",
-    priceMonthly: "$79",
-    description: "Ideal for growing businesses and larger teams.",
+    priceMonthly: 79,
+    priceAnnually: 790,
+    description:
+      "Ideal for growing businesses and larger teamsIdéal pour les entreprises en croissance et les équipes plus grandes.",
     features: [
       "Unlimited Projects",
       "100GB Storage",
@@ -36,7 +41,9 @@ const tiers = [
     id: "tier-enterprise",
     href: "#",
     priceMonthly: "Custom",
-    description: "Tailored solutions for large-scale organizations.",
+    priceAnnually: "Custom",
+    description:
+      "Des solutions sur mesure pour les organisations à grande échelle.",
     features: [
       "Unlimited Everything",
       "Custom Integrations",
@@ -53,40 +60,57 @@ function classNames(...classes: string[]) {
 }
 
 export default function Pricing() {
+  const [frequency, setFrequency] = useState<"monthly" | "annually">("monthly");
+
+  const handleFrequencyChange = (newFrequency: "monthly" | "annually") => {
+    setFrequency(newFrequency);
+  };
+
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600">
-            Pricing
+            Tarifs
           </h2>
           <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            Choose the right plan for&nbsp;you
+            Choisissez le plan qui vous convient
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
-          Whether you&#39;re a solo entrepreneur or a large enterprise, we have
-          a plan that fits your needs.
+          Que vous soyez un entrepreneur individuel ou une grande entreprise,
+          nous avons un plan adapté à vos besoins.
         </p>
         <div className="mt-16 flex justify-center">
           <fieldset className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-gray-200">
             <legend className="sr-only">Payment frequency</legend>
-            <label className="cursor-pointer rounded-full px-2.5 py-1 bg-indigo-600 text-white">
+            <label
+              className={`cursor-pointer rounded-full px-2.5 py-1 ${
+                frequency === "monthly" ? "bg-indigo-600 text-white" : ""
+              }`}
+            >
               <input
                 type="radio"
                 name="frequency"
                 value="monthly"
                 className="sr-only"
-                defaultChecked
+                checked={frequency === "monthly"}
+                onChange={() => handleFrequencyChange("monthly")}
               />
               <span>Monthly</span>
             </label>
-            <label className="cursor-pointer rounded-full px-2.5 py-1">
+            <label
+              className={`cursor-pointer rounded-full px-2.5 py-1 ${
+                frequency === "annually" ? "bg-indigo-600 text-white" : ""
+              }`}
+            >
               <input
                 type="radio"
                 name="frequency"
                 value="annually"
                 className="sr-only"
+                checked={frequency === "annually"}
+                onChange={() => handleFrequencyChange("annually")}
               />
               <span>Annually</span>
             </label>
@@ -124,10 +148,24 @@ export default function Pricing() {
               </p>
               <p className="mt-6 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tracking-tight text-gray-900">
-                  {tier.priceMonthly}
+                  {typeof tier[
+                    frequency === "monthly" ? "priceMonthly" : "priceAnnually"
+                  ] === "number"
+                    ? `$${
+                        tier[
+                          frequency === "monthly"
+                            ? "priceMonthly"
+                            : "priceAnnually"
+                        ]
+                      }`
+                    : tier[
+                        frequency === "monthly"
+                          ? "priceMonthly"
+                          : "priceAnnually"
+                      ]}
                 </span>
                 <span className="text-sm font-semibold leading-6 text-gray-600">
-                  /month
+                  /{frequency === "monthly" ? "month" : "year"}
                 </span>
               </p>
               <a
@@ -140,7 +178,7 @@ export default function Pricing() {
                   "mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 )}
               >
-                {tier.name === "Enterprise" ? "Contact sales" : "Get started"}
+                {tier.name === "Enterprise" ? "Contactez-nous" : "Commencer"}
               </a>
               <ul
                 role="list"
