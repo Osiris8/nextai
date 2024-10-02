@@ -18,6 +18,8 @@ export default function Dashboard() {
     { role: "assistant", content: "Hello! How can I assist you today?" },
   ]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const conversationStarters = [
     { icon: Zap, text: "Explain quantum computing" },
@@ -25,20 +27,39 @@ export default function Dashboard() {
     { icon: PenTool, text: "Write a poem about AI" },
   ];
 
-  const handleSend = (message = input) => {
-    if (message.trim()) {
-      setMessages([...messages, { role: "user", content: message }]);
-      setInput("");
-      // Simulate AI response
-      setTimeout(() => {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: `Here's a simulated response to: "${message}"`,
-          },
-        ]);
-      }, 1000);
+  const handleSend = async (message = input) => {
+    if (!message.trim()) return;
+
+    // Add the user's message to the conversation
+    setMessages((prev) => [...prev, { role: "user", content: message }]);
+    setInput("");
+    setLoading(true);
+    setError("");
+
+    try {
+      // Make the API request to your backend
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: message }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong.");
+      }
+
+      // Append the AI's response to the conversation
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: data.choices[0].message.content },
+      ]);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to get a response. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -96,11 +117,11 @@ export default function Dashboard() {
       <div className="flex-1 flex flex-col">
         {/* Chat header */}
         <div className="bg-white border-b p-4">
-          <h2 className="text-xl font-semibold">AI Assistant</h2>
+          <h2 className="text-xl font-semibold">NEXT AI</h2>
         </div>
 
         {/* Chat messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
           {messages.map((message, index) => (
             <div
               key={index}
@@ -111,7 +132,7 @@ export default function Dashboard() {
               <div
                 className={`max-w-sm p-3 rounded-lg ${
                   message.role === "user"
-                    ? "bg-blue-500 text-white"
+                    ? "bg-gray-900 text-white"
                     : "bg-gray-200"
                 }`}
               >
@@ -119,6 +140,13 @@ export default function Dashboard() {
               </div>
             </div>
           ))}
+          {loading && (
+            <div className="flex justify-start">
+              <div className="max-w-sm p-3 rounded-lg bg-gray-200">
+                Typing...
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Input area */}
@@ -135,6 +163,7 @@ export default function Dashboard() {
               <SendIcon className="h-4 w-4" />
             </Button>
           </div>
+          {error && <p className="text-red-500 mt-2">{error}</p>}
         </div>
       </div>
     </div>
