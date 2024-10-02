@@ -4,37 +4,39 @@ import { Zap, Shield, BarChart, Users, Globe, Clock } from "lucide-react";
 
 const features = [
   {
-    name: "'Lightning Fast'",
+    name: "Rapide comme l'éclair",
     description:
-      "'Experience blazing fast performance with our optimized infrastructure.'",
+      "Bénéficiez de performances ultra-rapides grâce à notre infrastructure IA optimisée.",
     icon: Zap,
   },
   {
-    name: "'Bank-Level Security'",
+    name: "Sécurité de niveau bancaire",
     description:
-      "'Your data is protected with state-of-the-art encryption and security measures.'",
+      "Vos données sont protégées par un cryptage et des mesures de sécurité de pointe.",
     icon: Shield,
   },
   {
-    name: "'Advanced Analytics'",
+    name: "Analyses avancées",
     description:
-      "'Gain valuable insights with our powerful analytics and reporting tools.'",
+      "Obtenez des informations précieuses grâce à nos puissants outils d'algorithmes.",
     icon: BarChart,
   },
   {
-    name: "'Team Collaboration'",
-    description: "'Seamlessly work together with your team in real-time.'",
+    name: "Collaboration d'équipe",
+    description:
+      "Travaillez en toute transparence avec votre équipe en temps réel.",
     icon: Users,
   },
   {
-    name: "'Global Accessibility'",
+    name: "Accessibilité globale",
     description:
-      "'Access your work from anywhere in the world, on any device.'",
+      "Accédez à votre travail partout dans le monde, sur n'importe quel appareil.",
     icon: Globe,
   },
   {
-    name: "'24/7 Support'",
-    description: "'Our dedicated support team is always ready to assist you.'",
+    name: "Assistance 24h/24 et 7j/7",
+    description:
+      "Notre équipe d'assistance dédiée est toujours prête à vous aider.",
     icon: Clock,
   },
 ];
@@ -45,15 +47,15 @@ export function Feature() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-purple-600 dark:text-purple-400">
-            Powerful Features
+            Caractéristiques
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Everything you need to succeed
+            Tout ce dont vous avez besoin
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-            Our SaaS platform is packed with features designed to boost your
-            productivity, streamline your workflow, and take your business to
-            the next level.
+            Notre IA regorge de fonctionnalités conçues pour augmenter votre
+            productivité, rationaliser votre flux de travail et faire passer
+            votre entreprise au niveau supérieur.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
