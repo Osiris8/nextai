@@ -7,15 +7,14 @@ const tiers = [
     name: "Starter",
     id: "tier-starter",
     href: "#",
-    priceMonthly: 29,
-    priceAnnually: 290,
+    priceMonthly: 19,
+    priceAnnually: 190,
     description:
-      "Idéal pour les particuliers et les petites équipes qui débutent.",
+      "Idéal pour les utilisateurs individuels ou les petites équipes.",
     features: [
-      "5 Projects",
-      "10GB Storage",
-      "Basic Analytics",
-      "Email Support",
+      "500 requêtes IA par mois",
+      "Support par email",
+      "Mises à jour régulières",
     ],
     mostPopular: false,
   },
@@ -23,16 +22,15 @@ const tiers = [
     name: "Pro",
     id: "tier-pro",
     href: "#",
-    priceMonthly: 79,
-    priceAnnually: 790,
+    priceMonthly: 49,
+    priceAnnually: 490,
     description:
-      "Ideal for growing businesses and larger teamsIdéal pour les entreprises en croissance et les équipes plus grandes.",
+      "Parfait pour les entreprises en expansion qui ont besoin de plus de requêtes IA.",
     features: [
-      "Unlimited Projects",
-      "100GB Storage",
-      "Advanced Analytics",
-      "Priority Support",
-      "Team Collaboration",
+      "5000 requêtes IA par mois",
+      "Support prioritaire",
+      "Analyse avancée des données",
+      "Accès à des fonctionnalités premium",
     ],
     mostPopular: true,
   },
@@ -42,14 +40,12 @@ const tiers = [
     href: "#",
     priceMonthly: "Custom",
     priceAnnually: "Custom",
-    description:
-      "Des solutions sur mesure pour les organisations à grande échelle.",
+    description: "Solutions personnalisées pour les grandes organisations.",
     features: [
-      "Unlimited Everything",
-      "Custom Integrations",
-      "Dedicated Account Manager",
-      "24/7 Phone Support",
-      "On-Premise Option",
+      "Requêtes IA illimitées",
+      "Support dédié 24/7",
+      "Intégrations sur mesure",
+      "Fonctionnalités avancées et exclusives",
     ],
     mostPopular: false,
   },
@@ -97,7 +93,7 @@ export default function Pricing() {
                 checked={frequency === "monthly"}
                 onChange={() => handleFrequencyChange("monthly")}
               />
-              <span>Monthly</span>
+              <span>Par mois</span>
             </label>
             <label
               className={`cursor-pointer rounded-full px-2.5 py-1 ${
@@ -112,7 +108,7 @@ export default function Pricing() {
                 checked={frequency === "annually"}
                 onChange={() => handleFrequencyChange("annually")}
               />
-              <span>Annually</span>
+              <span>Par An</span>
             </label>
           </fieldset>
         </div>
@@ -139,7 +135,7 @@ export default function Pricing() {
                 </h3>
                 {tier.mostPopular ? (
                   <p className="rounded-full bg-indigo-600/10 px-2.5 py-1 text-xs font-semibold leading-5 text-indigo-600">
-                    Most popular
+                    Plus populaire
                   </p>
                 ) : null}
               </div>
@@ -165,7 +161,7 @@ export default function Pricing() {
                       ]}
                 </span>
                 <span className="text-sm font-semibold leading-6 text-gray-600">
-                  /{frequency === "monthly" ? "month" : "year"}
+                  /{frequency === "monthly" ? "mois" : "an"}
                 </span>
               </p>
               <a
