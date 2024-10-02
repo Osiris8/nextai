@@ -1,6 +1,6 @@
 import OpenAI from "openai";
-
-export const POST = async (request) => {
+import { NextRequest } from "next/server";
+export const POST = async (request: NextRequest) => {
   try {
     const { prompt } = await request.json();
 
