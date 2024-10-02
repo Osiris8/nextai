@@ -1,5 +1,5 @@
 "use client";
-
+import Hero2 from "@/public/images/Hero2.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,15 +10,16 @@ export function Hero() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
             <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-              <span className="block xl:inline">Revolutionize Your</span>
-              {"'"}
-
-              <span className="block text-purple-600 xl:inline">Workflow</span>
+              <span className="block xl:inline">Révolutionnez</span>{" "}
+              <span className="block text-purple-600 xl:inline">
+                votre savoir
+              </span>
             </h1>
             <p className="mt-3 text-base text-gray-500 dark:text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              Streamline your tasks, boost productivity, and achieve more with
-              our cutting-edge SaaS platform. Experience the future of work
-              today.
+              Obtenez instantanément des réponses à toutes vos questions grâce à
+              notre plateforme alimentée par l&#39;IA. Que vous recherchiez des
+              solutions rapides ou des explications détaillées, notre service
+              rend l&#39;apprentissage simple et accessible.
             </p>
             <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
@@ -27,7 +28,7 @@ export function Hero() {
                     href="/signup"
                     className="w-full flex items-center justify-center px-8 py-3 border border-neutral-200 border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 md:py-4 md:text-lg md:px-10 dark:border-neutral-800"
                   >
-                    Get started
+                    Commencer
                   </Link>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
@@ -35,7 +36,7 @@ export function Hero() {
                     href="/demo"
                     className="w-full flex items-center justify-center px-8 py-3 border border-neutral-200 border-transparent text-base font-medium rounded-md text-purple-700 bg-purple-100 hover:bg-purple-200 md:py-4 md:text-lg md:px-10 dark:border-neutral-800"
                   >
-                    Live demo
+                    Démo en direct
                   </Link>
                 </div>
               </div>
@@ -45,8 +46,8 @@ export function Hero() {
             <div className="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
               <Image
                 className="w-full rounded-lg"
-                src="/placeholder.svg?height=400&width=600"
-                alt="App screenshot"
+                src={Hero2}
+                alt="Capture d'écran de l'application"
                 width={600}
                 height={400}
               />

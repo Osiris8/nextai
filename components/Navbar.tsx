@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Features", href: "/features" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "About", href: "/about" },
+  { name: "Acceuil", href: "/" },
+  { name: "Fonctionnalités", href: "/features" },
+  { name: "Prix", href: "/pricing" },
+  { name: "A propos", href: "/about" },
 ];
 
 export function Navbar() {
@@ -70,7 +70,7 @@ export function Navbar() {
             href="/login"
             className="rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600"
           >
-            Log in <span aria-hidden="true">&rarr;</span>
+            Se connecter <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </nav>
@@ -133,7 +133,7 @@ export function Navbar() {
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Log in
+                  Se connecter
                 </Link>
               </div>
             </div>
