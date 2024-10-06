@@ -2,16 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  PlusIcon,
-  SendIcon,
-  Settings,
-  LogOut,
-  User,
-  Zap,
-  Code,
-  PenTool,
-} from "lucide-react";
+import { PlusIcon, SendIcon, Settings, LogOut, User } from "lucide-react";
 
 export default function Dashboard() {
   const [messages, setMessages] = useState([
@@ -21,17 +12,18 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const conversationStarters = [
-    { icon: Zap, text: "Explain quantum computing" },
-    { icon: Code, text: "Debug my Python code" },
-    { icon: PenTool, text: "Write a poem about AI" },
-  ];
+  const [conversationStarters, setConversationStarters] = useState([
+    { text: "Explain quantum computing" },
+    { text: "Debug my Python code" },
+    { text: "Write a poem about AI" },
+  ]);
 
   const handleSend = async (message = input) => {
     if (!message.trim()) return;
 
     // Add the user's message to the conversation
     setMessages((prev) => [...prev, { role: "user", content: message }]);
+    setConversationStarters([...conversationStarters, { text: input }]);
     setInput("");
     setLoading(true);
     setError("");
@@ -94,7 +86,7 @@ export default function Dashboard() {
               variant="ghost"
               onClick={() => handleSend(starter.text)}
             >
-              <starter.icon className="mr-2 h-4 w-4" />
+              {/*<starter.icon className="mr-2 h-4 w-4" />*/}
               <span className="truncate">{starter.text}</span>
             </Button>
           ))}
