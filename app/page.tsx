@@ -1,4 +1,4 @@
-import Cta from "@/components/Cta";
+import CtaComponent from "@/components/CtaComponent";
 import { Feature } from "@/components/Feature";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -17,7 +17,7 @@ export default function Home() {
       <Feature />
       <Pricing />
       <Testimonial />
-      <Cta />
+      <CtaComponent />
       <Footer />
     </div>
   );
