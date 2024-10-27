@@ -81,6 +81,7 @@ export default function DashboardComponent() {
       <div className="p-4 border-t bg-white">
         <div className="flex space-x-2">
           <Input
+            type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message here..."
