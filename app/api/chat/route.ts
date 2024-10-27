@@ -14,7 +14,7 @@ export const POST = async (request: NextRequest) => {
         { role: "system", content: "Tu es un assistant utile" },
         { role: "user", content: prompt },
       ],
-      model: "zephyr-chat",
+      model: "llama-8b-chat",
     });
 
     return new Response(JSON.stringify(completion), { status: 200 });
